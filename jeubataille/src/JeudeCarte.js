@@ -98,7 +98,16 @@ const JeuDeCartes = () => {
                 <div>
                     <p>Cartes brûlées : {cartesBrulees.map(carte => carte.code).join(', ')}</p>
                 </div>
-
+                <div>
+                <h3>Choisissez une carte :</h3>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+                    {paquetJoueur.slice(0, 5).map((carte, index) => (
+                        <div key={index} onClick={() => tirerCartes(index)} style={{ cursor: 'pointer' }}>
+                            <img src={carte.image} alt={carte.code} style={{ width: '60px', height: '90px' }} />
+                        </div>
+                    ))}
+                </div>
+            </div>
             </div>
         </div >
     );
