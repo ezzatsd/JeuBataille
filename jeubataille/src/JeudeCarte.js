@@ -83,9 +83,11 @@ const JeuDeCartes = () => {
                         <p className='paquet'> Paquet : {paquetJoueur.length}</p>
                     </div>
                     <p>Votre carte : {carteJoueur ? <img src={carteJoueur.image} alt={carteJoueur.code} /> : 'Aucune'}</p>
+                    <p>Prochaine carte : {paquetJoueur.length > 0 ? <img src={paquetJoueur[0].image} alt={paquetJoueur[0].code} /> : 'Aucune'}</p>
                 </div>
                 <div className='ligne-jeu'>
                     <p>Carte de l'ordinateur : {carteOrdinateur ? <img src={carteOrdinateur.image} alt={carteOrdinateur.code} /> : 'Aucune'} </p>
+                    <p>Prochaine carte : {paquetOrdinateur.length > 0 ? <img src={paquetOrdinateur[0].image} alt={paquetOrdinateur[0].code} /> : 'Aucune'}</p>
                     <div className='pioche'>
                         <img src={carteImage} alt="Carte" />
                         <p className='paquet'>Paquet : {paquetOrdinateur.length}</p>
