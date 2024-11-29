@@ -5,8 +5,12 @@ import carteImage from '/Users/ezzatsaoud/Desktop/JeuBataille/jeubataille/src/As
 const JeuDeCartes = () => {
     const [paquetJoueur, setPaquetJoueur] = useState([]);
     const [paquetOrdinateur, setPaquetOrdinateur] = useState([]);
+
     const [carteJoueur, setCarteJoueur] = useState(null);
     const [carteOrdinateur, setCarteOrdinateur] = useState(null);
+
+    const [cartesBrulees, setCartesBrulees] = useState([]);
+
     const [message, setMessage] = useState('');
 
     useEffect(() => {
@@ -37,7 +41,7 @@ const JeuDeCartes = () => {
 
     const tirerCartes = () => {
 
-        const nouvelleCarteJoueur = paquetJoueur.shift();
+        const nouvelleCarteJoueur = paquetJoueur.shift(); // Retire la première carte du paquet
         const nouvelleCarteOrdinateur = paquetOrdinateur.shift();
 
         setCarteJoueur(nouvelleCarteJoueur);
@@ -53,19 +57,25 @@ const JeuDeCartes = () => {
 
         if (valeurJoueur > valeurOrdinateur) {
             setMessage('Vous gagnez cette manche !');
-            setPaquetJoueur([...paquetJoueur, joueur, ordinateur]);
+            setPaquetJoueur([...paquetJoueur, joueur, ordinateur, ...cartesBrulees]);
+            setCartesBrulees([]);
         } else if (valeurJoueur < valeurOrdinateur) {
             setMessage('Ordinateur gagne cette manche.');
-            setPaquetOrdinateur([...paquetOrdinateur, joueur, ordinateur]);
+            setPaquetOrdinateur([...paquetOrdinateur, joueur, ordinateur, ...cartesBrulees]);
+            setCartesBrulees([]);
         } else {
             setMessage('Bataille !');
+            setCartesBrulees([...cartesBrulees, joueur, ordinateur]);
+
         }
     };
 
     return (
         <div>
             <h1>Jeu de Bataille</h1>
+
             <button onClick={tirerCartes}>Tirer une carte</button>
+            <p>{message}</p>
             <div>
                 <div className='ligne-jeu'>
                     <div className='pioche' >
@@ -83,7 +93,10 @@ const JeuDeCartes = () => {
 
             </div >
             <div>
-                <p>{message}</p>
+                <div>
+                    <p>Cartes brûlées : {cartesBrulees.map(carte => carte.code).join(', ')}</p>
+                </div>
+
             </div>
         </div >
     );

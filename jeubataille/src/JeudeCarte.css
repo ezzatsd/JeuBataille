@@ -1,40 +1,29 @@
-.card {
-    width: 60px;
-    height: 90px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    margin: 5px;
-    background-color: white;
-  }
-  
-  .card-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .message {
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  .ligne-jeu
-  {
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  }
-  
-  .pioche 
-  {
-    margin : 10px;
-  }
-  
-  .paquet
-  {
-    text-align: center;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #333;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+img {
+  width: 150px;
+  margin: 10px;
+}
