@@ -1,0 +1,40 @@
+.card {
+    width: 60px;
+    height: 90px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin: 5px;
+    background-color: white;
+  }
+  
+  .card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .message {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .ligne-jeu
+  {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+  .pioche 
+  {
+    margin : 10px;
+  }
+  
+  .paquet
+  {
+    text-align: center;
+  }
